@@ -43,7 +43,7 @@ app.use("/api",authMiddleware,answerRoutes);
 // try conncet to database and if so app listen
 async function start() {
   try {
-    const result = await dbConnection.execute("SELECT 1");
+    await dbConnection.execute("SELECT 1");
     console.log("database connection established");
     app.listen(PORT, () => {
       console.log(`Listening to :${PORT}`);
