@@ -6,7 +6,7 @@ const answerRoutes = require("./routes/answerRoute");
 const authMiddleware = require("./middleware/authMiddleware");
 const app = express();
 
-const port = 5500;
+const port = 3000;
 
 
 app.use(bodyparser.json()); //body json format
