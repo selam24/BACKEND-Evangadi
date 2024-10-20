@@ -6,7 +6,7 @@ const answerRoutes = require("./routes/answerRoute");
 const authMiddleware = require("./middleware/authMiddleware");
 const app = express();
 
-const port = 3000;
+const PORT = 4000;
 
 
 app.use(bodyparser.json()); //body json format
@@ -48,9 +48,9 @@ async function start() {
   try {
     const result = await dbConnection.getConnection();
     console.log("database connection established");
-    app.listen(port, (error) => {
+    app.listen(PORT, (error) => {
       if (error) console.log(error.message);
-      console.log(`Listening to :${port}`);
+      console.log(`Listening to :${PORT}`);
     });
   } catch (error) {
     console.log(error.message);
