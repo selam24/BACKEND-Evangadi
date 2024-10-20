@@ -21,9 +21,6 @@ const dbConnection = require("./db/dbconfig");
 app.get("/", (req, res) => {
   res.send("welcome");
 });
-
-
-
   
 // creating tables middlewear install
 const installRoutes = require("./routes/installRoute");
@@ -46,10 +43,9 @@ app.use("/api",authMiddleware,answerRoutes);
 // try conncet to database and if so app listen
 async function start() {
   try {
-    const result = await dbConnection.getConnection();
+    const result = await dbConnection.execute("SELECT 1");
     console.log("database connection established");
-    app.listen(PORT, (error) => {
-      if (error) console.log(error.message);
+    app.listen(PORT, () => {
       console.log(`Listening to :${PORT}`);
     });
   } catch (error) {
