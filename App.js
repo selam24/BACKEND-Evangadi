@@ -48,13 +48,14 @@ async function start() {
   try {
     const result = await dbConnection.getConnection();
     console.log("database connection established");
+    app.listen(port, (error) => {
+      if (error) console.log(error.message);
+      console.log(`Listening to :${port}`);
+    });
   } catch (error) {
     console.log(error.message);
   }
 }
 start();
 
-app.listen(port, (error) => {
-  if (error) console.log(error.message);
-  console.log(`Listening to :${port}`);
-});
+
