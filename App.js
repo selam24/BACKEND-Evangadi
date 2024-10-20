@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 //db connection credentials
-const dbConnection = require("./db/dbconfig");
+const dbConnection = require("./db/dbconfig.js");
 
 //   //testing the backend
 app.get("/", (req, res) => {
